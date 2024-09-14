@@ -1,6 +1,6 @@
 name: fast_code
-description: "A new Flutter plugin project."
-version: 0.0.1
+description: "Integrate the necessary code for the app with minimal code and libraries"
+version: 0.0.2
 homepage:
 
 environment:

@@ -43,11 +43,11 @@ mixin StatusMixin<T extends StatefulWidget> on State<T> {
     setState(() {});
   }
 
-  Widget errorWidget() => FastConfig.errorWidget;
+  Widget errorWidget() => FastConfig().errorWidget;
 
-  Widget emptyWidget() => FastConfig.emptyWidget;
+  Widget emptyWidget() => FastConfig().emptyWidget;
 
-  Widget loadingWidget() => FastConfig.loadingWidget;
+  Widget loadingWidget() => FastConfig().loadingWidget;
 
   bool get isNormal => !error && !empty && !loading;
 

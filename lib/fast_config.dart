@@ -2,20 +2,33 @@ import 'package:flutter/cupertino.dart';
 
 ///全局配置
 class FastConfig {
-  static Widget errorWidget = const Center(
-    child: Text('Error'),
-  );
+  FastConfig(
+      {this.emptyWidget = const Center(
+        child: Text('No data'),
+      ),
+      this.errorWidget = const Center(
+        child: Text('Error'),
+      ),
+      this.loadingWidget = const Center(
+        child: CupertinoActivityIndicator(),
+      )});
 
-  static Widget emptyWidget = const Center(
-    child: Text('No data'),
-  );
+  Widget errorWidget;
 
-  static Widget loadingWidget = const Center(
-    child: CupertinoActivityIndicator(),
-  );
+  Widget emptyWidget;
+
+  Widget loadingWidget;
 }
 
 class FastCode {
+  static final FastCode _instance = FastCode._internal();
+
+  FastCode._internal();
+
+  factory FastCode() {
+    return _instance;
+  }
+
   FastConfig config = FastConfig();
 
   init(FastConfig config) {
