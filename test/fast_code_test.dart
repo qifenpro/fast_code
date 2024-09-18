@@ -1,13 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fast_code/fast_code.dart';
-import 'package:fast_code/fast_code_platform_interface.dart';
-import 'package:fast_code/fast_code_method_channel.dart';
+import 'package:fast_code/src/channel/fast_code_channel.dart';
+import 'package:fast_code/src/channel/fast_code_platform_interface.dart';
+import 'package:fast_code/src/channel/fast_code_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockFastCodePlatform
     with MockPlatformInterfaceMixin
     implements FastCodePlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
 }
@@ -20,7 +19,7 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    FastCode fastCodePlugin = FastCode();
+    FastCodeChannel fastCodePlugin = FastCodeChannel();
     MockFastCodePlatform fakePlatform = MockFastCodePlatform();
     FastCodePlatform.instance = fakePlatform;
 

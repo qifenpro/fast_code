@@ -1,8 +1,10 @@
-import 'package:fast_code/fast_config.dart';
+import 'package:fast_code/fast_code.dart';
+import 'package:fast_code/src/fast_config.dart';
+import 'package:fast_code/src/fast_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-mixin StatusMixin<T extends StatefulWidget> on State<T> {
+mixin FastStatusMixin<T extends StatefulWidget> on State<T> {
   var loading = false;
 
   var error = false;
@@ -23,7 +25,7 @@ mixin StatusMixin<T extends StatefulWidget> on State<T> {
       loading = false;
       _onData(list);
     } catch (e) {
-      print(e);
+      fastPrint(e);
       loading = false;
       onError(e);
     }
@@ -43,15 +45,15 @@ mixin StatusMixin<T extends StatefulWidget> on State<T> {
     setState(() {});
   }
 
-  Widget errorWidget() => FastConfig().errorWidget;
+  Widget errorWidget() => FastCode().config.errorWidget;
 
-  Widget emptyWidget() => FastConfig().emptyWidget;
+  Widget emptyWidget() => FastCode().config.emptyWidget;
 
-  Widget loadingWidget() => FastConfig().loadingWidget;
+  Widget loadingWidget() => FastCode().config.loadingWidget;
 
   bool get isNormal => !error && !empty && !loading;
 
-  Widget get abnormalWidget {
+  Widget get otherWidget {
     if (error) {
       return errorWidget();
     } else if (loading && empty) {

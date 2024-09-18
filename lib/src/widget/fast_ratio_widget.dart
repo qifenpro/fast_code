@@ -1,10 +1,12 @@
+import 'package:fast_code/src/fast_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// [ratio] 是宽高比例
-class RatioWidget extends StatelessWidget {
-  const RatioWidget({
+///Automatically set the width and height by setting the image width, height and ratio separately
+
+class FastRatioWidget extends StatelessWidget {
+  const FastRatioWidget({
     super.key,
     this.child,
     this.height,
@@ -32,9 +34,7 @@ class RatioWidget extends StatelessWidget {
         realHeight = width! / ratio!;
       }
     } catch (e) {
-      if (kDebugMode) {
-        print('$e');
-      }
+      fastPrint('$e');
     }
 
     var imageWidget = SizedBox(

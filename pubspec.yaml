@@ -1,19 +1,29 @@
 name: fast_code
 description: "Integrate the necessary code for the app with minimal code and libraries"
 version: 0.0.2
-homepage:
+
+# author: qifen qifendev@qq.com
+homepage: https://github.com/qifenpro/fast_code.git
+repository: https://github.com/qifenpro/fast_code.git
+issue_tracker: https://github.com/qifenpro/fast_code/issues
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: ">=3.0.0 <4.0.0"
+
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  web: ^0.5.1
+  web: ^1.0.0
   plugin_platform_interface: ^2.0.2
+  wechat_assets_picker: ^9.2.0
+  wechat_camera_picker: ^4.3.1
+  flutter_easyloading: ^3.0.5
+  cached_network_image: ^3.4.1
+  pull_to_refresh: ^2.0.0
 
 dev_dependencies:
   flutter_test:
