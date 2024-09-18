@@ -1,8 +1,4 @@
-# Fast Code Example App
-
-This example demonstrates how to use the `fast_code` package along with various other Flutter components like `flutter_easyloading` for task management and loading indicators.
-
-
+# Fast Code
 
 #### Preview
 
@@ -17,7 +13,6 @@ This example demonstrates how to use the `fast_code` package along with various 
 <img src="https://qifenpro.github.io/screen/fast_code/5.png" alt="Screenshot 5" height="200"/>
 
 <img src="https://qifenpro.github.io/screen/fast_code/6.png" alt="Screenshot 6" height="200"/>
-
 
 ## Getting Started
 
@@ -179,7 +174,6 @@ CupertinoButton(
   },
 )
 ```
-
 
 ## Conclusion
 
