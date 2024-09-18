@@ -165,17 +165,17 @@ CupertinoButton(
 
 #### Preview
 
-<img src="screenshots/1.png" alt="Screenshot 1" height="300"/>
+<img src="https://qifenpro.github.io/screen/fast_code/1.png" alt="Screenshot 1" height="200"/>
 
-<img src="screenshots/2.png" alt="Screenshot 2" height="300"/>
+<img src="https://qifenpro.github.io/screen/fast_code/2.png" alt="Screenshot 2" height="200"/>
 
-<img src="screenshots/3.png" alt="Screenshot 3" height="300"/>
+<img src="https://qifenpro.github.io/screen/fast_code/3.png" alt="Screenshot 3" height="200"/>
 
-<img src="screenshots/4.png" alt="Screenshot 4" height="300"/>
+<img src="https://qifenpro.github.io/screen/fast_code/4.png" alt="Screenshot 4" height="200"/>
 
-<img src="screenshots/5.png" alt="Screenshot 5" height="300"/>
+<img src="https://qifenpro.github.io/screen/fast_code/5.png" alt="Screenshot 5" height="200"/>
 
-<img src="screenshots/6.png" alt="Screenshot 6" height="300"/>
+<img src="https://qifenpro.github.io/screen/fast_code/6.png" alt="Screenshot 6" height="200"/>
 
 ## Conclusion
 
