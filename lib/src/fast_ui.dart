@@ -15,14 +15,15 @@ class FastUi {
     FutureOr Function()? task,
   }) async {
     T? result;
-    if (loading) EasyLoading.show(maskType: EasyLoadingMaskType.black);
     try {
+      if (loading) EasyLoading.show(maskType: EasyLoadingMaskType.black);
       result = await task?.call();
     } catch (e) {
       fastPrint('$e');
       error?.call(e);
+    } finally {
+      if (loading) EasyLoading.dismiss();
     }
-    if (loading) EasyLoading.dismiss();
     return result;
   }
 

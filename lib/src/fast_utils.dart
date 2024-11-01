@@ -26,7 +26,7 @@ class FastUtils {
               },
             ),
             TextClick<MediaFrom>(
-              text: FastCode().config.pickerMediaGallery,
+              text: FastCode().config.pickerMediaCamera,
               tap: () {
                 source = MediaFrom.camera;
               },
