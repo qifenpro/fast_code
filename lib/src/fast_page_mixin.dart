@@ -99,7 +99,7 @@ mixin FastPageMixin<T, F extends StatefulWidget> on State<F> {
 
   Widget loadingWidget() => FastCode().config.loadingWidget;
 
-  bool get isNormal => !error && !loading || data.isNotEmpty;
+  bool get isNormal => !error && !loading && data.isNotEmpty;
 
   bool get isEmpty => data.isEmpty;
 
