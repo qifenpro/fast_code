@@ -2,8 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class FastPopupMenu1<T> extends StatefulWidget {
-  const FastPopupMenu1({
+class FastPopupMenu<T> extends StatefulWidget {
+  const FastPopupMenu({
     super.key,
     this.onOpened,
     required this.menuItems,
@@ -39,10 +39,10 @@ class FastPopupMenu1<T> extends StatefulWidget {
   final Color? openColor;
 
   @override
-  State<FastPopupMenu1<T>> createState() => _FastPopupMenu1State<T>();
+  State<FastPopupMenu<T>> createState() => _FastPopupMenuState<T>();
 }
 
-class _FastPopupMenu1State<T> extends State<FastPopupMenu1<T>> {
+class _FastPopupMenuState<T> extends State<FastPopupMenu<T>> {
   Color? openColor;
 
   @override
