@@ -19,6 +19,7 @@ class FastImageWidget extends StatelessWidget {
       this.errorWidget,
       this.cacheRatio,
       this.color,
+      this.cacheKey,
       this.border});
   final String? imageUrl;
   final double? height, width, ratio;
@@ -30,6 +31,7 @@ class FastImageWidget extends StatelessWidget {
   final Widget Function(BuildContext, String)? placeholder;
   final Widget Function(BuildContext, String, Object)? errorWidget;
   final Widget Function(double width, double height)? stackBuilder;
+  final String? cacheKey;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +67,7 @@ class FastImageWidget extends StatelessWidget {
                 )
               : CachedNetworkImage(
                   height: realHeight,
-                  width: realWidth,
+                  width: realWidth, cacheKey: cacheKey,
                   placeholder: placeholder,
                   errorWidget: errorWidget, color: color,
                   maxHeightDiskCache: cacheRatio == null
