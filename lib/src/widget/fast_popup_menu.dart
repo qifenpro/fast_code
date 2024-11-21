@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +11,7 @@ class FastPopupMenu<T> extends StatefulWidget {
     this.box,
     required this.onSelected,
     this.radius,
+    this.tooltip,
     this.color,
     this.padding,
     this.onCanceled,
@@ -29,6 +29,7 @@ class FastPopupMenu<T> extends StatefulWidget {
   final Offset? offset;
   final double? radius;
   final BorderRadius? borderRadius;
+  final String? tooltip;
 
   final BoxConstraints? box;
 
@@ -49,14 +50,13 @@ class _FastPopupMenuState<T> extends State<FastPopupMenu<T>> {
   Widget build(BuildContext context) {
     return PopupMenuButton<T>(
       constraints: widget.box,
+      tooltip: widget.tooltip,
       padding: widget.padding ?? const EdgeInsets.all(8),
       color: widget.color,
-      icon: StatefulBuilder(builder: (context, s) {
-        return Container(
-          color: openColor,
-          child: widget.child,
-        );
-      }),
+      icon: Container(
+        color: openColor,
+        child: widget.child,
+      ),
       onSelected: (T value) {
         // 菜单关闭后恢复颜色
         setState(() {
