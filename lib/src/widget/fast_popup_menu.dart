@@ -1,63 +1,9 @@
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// class FastPopupMenu<T> extends StatelessWidget {
-//   final List<PopupMenuEntry<T>> menuItems;
-
-//   final T? initialValue;
-
-//   final void Function(T) onSelected;
-//   final Widget? child;
-//   final Offset? offset;
-//   final double? radius;
-//   final BorderRadius? borderRadius;
-
-//   final BoxConstraints? box;
-
-//   final EdgeInsets? padding;
-//   final Color? color;
-//   final void Function()? onOpened;
-
-//   const FastPopupMenu({
-//     super.key,
-//     this.onOpened,
-//     required this.menuItems,
-//     this.initialValue,
-//     this.borderRadius,
-//     this.box,
-//     required this.onSelected,
-//     this.radius,
-//     this.color,
-//     this.padding,
-//     this.offset,
-//     this.child,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return PopupMenuButton<T>(
-//       constraints: box,
-//       padding: padding ?? const EdgeInsets.all(8),
-//       color: color,
-//       onOpened: (){
-
-//         onOpened?.call();
-//       },
-//       icon: Container(
-//         child: child,
-//       ),
-//       initialValue: initialValue,
-//       offset: offset ?? Offset.zero,
-//       shape: RoundedRectangleBorder(
-//         borderRadius: borderRadius ?? BorderRadius.circular(radius ?? 16),
-//       ),
-//       itemBuilder: (context) => menuItems,
-//       onSelected: onSelected,
-//     );
-//   }
-// }
-
-class FastPopupMenu<T> extends StatefulWidget {
-  const FastPopupMenu({
+class FastPopupMenu1<T> extends StatefulWidget {
+  const FastPopupMenu1({
     super.key,
     this.onOpened,
     required this.menuItems,
@@ -93,10 +39,10 @@ class FastPopupMenu<T> extends StatefulWidget {
   final Color? openColor;
 
   @override
-  State<FastPopupMenu<T>> createState() => _FastPopupMenuState<T>();
+  State<FastPopupMenu1<T>> createState() => _FastPopupMenu1State<T>();
 }
 
-class _FastPopupMenuState<T> extends State<FastPopupMenu<T>> {
+class _FastPopupMenu1State<T> extends State<FastPopupMenu1<T>> {
   Color? openColor;
 
   @override
@@ -105,35 +51,31 @@ class _FastPopupMenuState<T> extends State<FastPopupMenu<T>> {
       constraints: widget.box,
       padding: widget.padding ?? const EdgeInsets.all(8),
       color: widget.color,
-      icon: Container(
-        color: openColor,
-        child: widget.child,
-      ),
+      icon: StatefulBuilder(builder: (context, s) {
+        return Container(
+          color: openColor,
+          child: widget.child,
+        );
+      }),
       onSelected: (T value) {
         // 菜单关闭后恢复颜色
-        if (openColor != null) {
-          setState(() {
-            openColor = null;
-          });
-        }
+        setState(() {
+          openColor = null;
+        });
         widget.onSelected.call(value);
       },
       onCanceled: () {
         // 如果用户取消选择也恢复颜色
-        if (openColor != null) {
-          setState(() {
-            openColor = null;
-          });
-        }
+        setState(() {
+          openColor = null;
+        });
         widget.onCanceled?.call();
       },
       onOpened: () {
         // 弹出时改变颜色
-        if (openColor != null) {
-          setState(() {
-            openColor = widget.openColor;
-          });
-        }
+        setState(() {
+          openColor = widget.openColor;
+        });
         widget.onOpened?.call();
       },
       initialValue: widget.initialValue,
