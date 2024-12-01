@@ -14,6 +14,7 @@ class FastUtils {
       {required BuildContext context,
       required int maxImages,
       bool allowVideo = false,
+      SpecialPickerType? specialPickerType,
       MediaFrom? from}) async {
     if (maxImages <= 0) return [];
     MediaFrom? source = from;
@@ -49,6 +50,7 @@ class FastUtils {
       final List<AssetEntity>? result = await AssetPicker.pickAssets(
         context,
         pickerConfig: AssetPickerConfig(
+            specialPickerType: specialPickerType,
             requestType: allowVideo ? RequestType.common : RequestType.image,
             maxAssets: maxImages),
       );

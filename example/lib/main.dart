@@ -6,6 +6,13 @@ import 'dart:async';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() {
+  try {
+    FastCode().init(FastConfig(
+      emptyWidget: Text('data111'),
+    ));
+  } catch (e) {
+    print('$e');
+  }
   runApp(MaterialApp(
     home: MyApp(),
     builder: EasyLoading.init(),
