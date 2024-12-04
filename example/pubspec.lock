@@ -141,10 +141,10 @@ packages:
     dependency: transitive
     description:
       name: extended_image
-      sha256: "613875dc319f17546ea07499b5f0774755709a19a36dfde812e5eda9eb7a5c8c"
+      sha256: "69d4299043334ecece679996e47d0b0891cd8c29d8da0034868443506f1d9a78"
       url: "https://pub.dev"
     source: hosted
-    version: "9.0.7"
+    version: "8.3.1"
   extended_image_library:
     dependency: transitive
     description:
@@ -683,14 +683,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  visibility_detector:
-    dependency: transitive
-    description:
-      name: visibility_detector
-      sha256: dd5cc11e13494f432d15939c3aa8ae76844c42b723398643ce9addb88a5ed420
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.0+2"
   vm_service:
     dependency: transitive
     description:
@@ -719,10 +711,10 @@ packages:
     dependency: transitive
     description:
       name: wechat_assets_picker
-      sha256: d82e1181ab44cc735b1389b4ae6b406faad723b1a9ac27eb12e1061917a8abe0
+      sha256: "9934724a45fdb2b12e332d8190c58713e6675c37c630d53608e0f50167215c9f"
       url: "https://pub.dev"
     source: hosted
-    version: "9.4.1"
+    version: "8.9.0-dev.1"
   wechat_camera_picker:
     dependency: transitive
     description:
