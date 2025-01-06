@@ -12,6 +12,7 @@ class FastConfig {
     this.loadingWidget = const Center(
       child: CupertinoActivityIndicator(),
     ),
+    this.loadingTaskWidget,
     this.iosDialogCancelText = 'Cancel',
     this.pickerMediaCamera = 'Camera',
     this.pickerMediaGallery = 'Gallery',
@@ -22,6 +23,8 @@ class FastConfig {
   Widget emptyWidget;
 
   Widget loadingWidget;
+
+  Widget? loadingTaskWidget;
 
   String iosDialogCancelText, pickerMediaGallery, pickerMediaCamera;
 }

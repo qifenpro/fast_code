@@ -16,7 +16,12 @@ class FastUi {
   }) async {
     T? result;
     try {
-      if (loading) EasyLoading.show(maskType: EasyLoadingMaskType.black);
+      if (loading) {
+        EasyLoading.show(
+          maskType: EasyLoadingMaskType.black,
+          indicator: FastCode().config.loadingTaskWidget,
+        );
+      }
       result = await task?.call();
     } catch (e) {
       fastPrint('$e');
