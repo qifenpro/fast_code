@@ -18,7 +18,7 @@ class FastUi {
     try {
       if (loading) {
         EasyLoading.show(
-          maskType: EasyLoadingMaskType.black,
+          maskType: FastCode().config.loadingTaskMaskType,
           indicator: FastCode().config.loadingTaskWidget,
         );
       }

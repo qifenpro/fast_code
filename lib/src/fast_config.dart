@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 ///全局配置
 class FastConfig {
@@ -13,6 +14,7 @@ class FastConfig {
       child: CupertinoActivityIndicator(),
     ),
     this.loadingTaskWidget,
+    this.loadingTaskMaskType = EasyLoadingMaskType.black,
     this.iosDialogCancelText = 'Cancel',
     this.pickerMediaCamera = 'Camera',
     this.pickerMediaGallery = 'Gallery',
@@ -25,6 +27,8 @@ class FastConfig {
   Widget loadingWidget;
 
   Widget? loadingTaskWidget;
+
+  EasyLoadingMaskType loadingTaskMaskType;
 
   String iosDialogCancelText, pickerMediaGallery, pickerMediaCamera;
 }
