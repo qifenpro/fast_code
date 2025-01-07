@@ -13,12 +13,18 @@ class FastUi {
     Function(dynamic)? error,
     bool loading = true,
     FutureOr Function()? task,
+    EasyLoadingMaskType? maskType,
+    Widget? indicator,
   }) async {
     T? result;
     try {
       if (loading) {
         EasyLoading.show(
-          maskType: EasyLoadingMaskType.black,
+          maskType: maskType ??
+              (FastCode().config.loadingTaskWidget != null
+                  ? EasyLoadingMaskType.none
+                  : EasyLoadingMaskType.black),
+          indicator: indicator ?? FastCode().config.loadingTaskWidget,
         );
       }
       result = await task?.call();
