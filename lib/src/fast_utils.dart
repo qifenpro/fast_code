@@ -70,3 +70,18 @@ fastPrint(dynamic dy) {
     }
   }
 }
+
+
+
+extension FastIntExt on int {
+  String km() {
+    var number = this;
+    if (number >= 1000000) {
+      return '${(number / 1000000).toStringAsFixed(1)}M';
+    } else if (number >= 1000) {
+      return '${(number / 1000).toStringAsFixed(1)}K';
+    } else {
+      return number.toString();
+    }
+  }
+}

@@ -33,3 +33,4 @@ export 'src/widget/fast_refresh_widget.dart';
 export 'src/widget/fast_image_widget.dart';
 export 'src/fast_scroll_color_mixin.dart';
 export 'src/widget/fast_popup_menu.dart';
+export 'src/fast_shared.dart';
