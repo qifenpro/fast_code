@@ -1,6 +1,6 @@
 name: fast_code
 description: "Integrate the necessary code for the app with minimal code and libraries"
-version: 0.3.3
+version: 0.3.4
 
 # author: qifen qifendev@qq.com
 homepage: https://github.com/qifenpro/fast_code.git
