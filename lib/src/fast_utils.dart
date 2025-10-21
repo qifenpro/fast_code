@@ -71,8 +71,6 @@ fastPrint(dynamic dy) {
   }
 }
 
-
-
 extension FastIntExt on int {
   String km() {
     var number = this;

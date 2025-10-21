@@ -254,19 +254,19 @@ class _LoadingPageState extends State<LoadingPage> with FastStatusMixin {
         title: Text('Inner Loading'),
       ),
       body: FastRefreshWidget(
-        onRefresh: refresh,
-        child: isNormal
+        onRefresh: statusRefresh,
+        child: statusIsNormal
             ? Center(child: const Text('loading success'))
-            : otherWidget,
+            : statusOtherWidget,
       ),
     );
   }
 
   @override
-  bool get empty => false;
+  bool get statusEmpty => false;
 
   @override
-  Future loadData() async {
+  Future statusLoadData() async {
     await Future.delayed(const Duration(seconds: 2));
   }
 }
@@ -288,33 +288,33 @@ class _PageListLoadingPageState extends State<PageListLoadingPage>
       ),
       body: FastRefreshWidget(
         onLoad:
-            loadMore, //If the bottom loading is abnormal, you can continue to pull down the bottom
+            pageLoadMore, //If the bottom loading is abnormal, you can continue to pull down the bottom
         // onLoad: noMore
         //     ? null
         //     : loadMore, //The bottom loading is abnormal and you cannot continue to pull down the bottom
-        onRefresh: refresh,
-        child: isNormal
+        onRefresh: pageRefresh,
+        child: pageIsNormal
             ? ListView.builder(
-                itemCount: data.length,
+                itemCount: pageListData.length,
                 itemBuilder: (context, index) {
                   return Container(
                     alignment: Alignment.center,
-                    child: Text('${data[index]}  Index: $index'),
+                    child: Text('${pageListData[index]}  Index: $index'),
                     height: 60,
                   );
                 },
               )
-            : otherWidget,
+            : pageOtherWidget,
       ),
     );
   }
 
   @override
-  int get initializePage => 0;
+  int get pageInitPage => 0;
 
   @override
-  Future<List<String>> loadData(int page) async {
-    if (page == initializePage) {
+  Future<List<String>> pageLoadData(int page) async {
+    if (page == pageInitPage) {
       //other init loading
       await Future.delayed(Duration(seconds: 1));
       // Simulation error
