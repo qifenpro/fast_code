@@ -38,6 +38,13 @@ class FastUi {
     return result;
   }
 
+  static tap({Widget? child, Function()? tap}) {
+    return GestureDetector(
+      onTap: tap,
+      child: child,
+    );
+  }
+
   static Future<T?> showIosDialog<T>(
     context, {
     showCancel = true,
@@ -90,11 +97,11 @@ class FastUi {
   static var darkPrimaryColor = const Color(0xff101010);
   static var darkPrimaryColorLight = const Color(0xff202020);
 
-  static var mainColor = Colors.deepOrange;
+  static Color mainColor = Colors.deepOrange;
   static var mainTrColor = mainColor.withOpacity(0.5);
 
   static var mainGradient =
-      LinearGradient(colors: [mainColor, mainColor.shade100]);
+      LinearGradient(colors: [mainColor, mainColor.withAlpha(50)]);
 
   static var darkTheme = ThemeData(
     focusColor: mainTrColor,
@@ -239,6 +246,8 @@ class FastUi {
     // //图标的颜色
     // iconTheme: const IconThemeData(color: Colors.white),
   );
+
+  static showDatePicker({required BuildContext context}) {}
 }
 
 class TextClick<T> {
@@ -246,6 +255,14 @@ class TextClick<T> {
   String? text;
   bool red = false;
   T? returnValue;
+  Color? color;
+  bool autoPop;
 
-  TextClick({this.tap, this.text, this.red = false, this.returnValue});
+  TextClick(
+      {this.tap,
+      this.text,
+      this.red = false,
+      this.returnValue,
+      Color? color,
+      this.autoPop = true});
 }

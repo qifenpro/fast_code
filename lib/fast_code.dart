@@ -22,17 +22,18 @@
 
 library fast_code;
 
-export 'src/fast_ui.dart';
-export 'src/fast_utils.dart';
 export 'src/loading/fast_page_mixin.dart';
 export 'src/loading/fast_status_mixin.dart';
 export 'src/loading/fast_refresh_widget.dart';
 export 'src/loading/fast_get_page_mixin.dart';
 export 'src/loading/fast_get_status_mixin.dart';
-export 'src/fast_config.dart';
 export 'src/widget/fast_ratio_widget.dart';
-export 'src/fast_code.dart';
+export 'src/widget/fast_button.dart';
 export 'src/widget/fast_image_widget.dart';
-export 'src/fast_scroll_color_mixin.dart';
 export 'src/widget/fast_popup_menu.dart';
+export 'src/fast_code.dart';
+export 'src/fast_scroll_color_mixin.dart';
 export 'src/fast_shared.dart';
+export 'src/fast_ui.dart';
+export 'src/fast_utils.dart';
+export 'src/fast_config.dart';
